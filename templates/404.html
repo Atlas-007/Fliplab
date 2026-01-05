@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>404 — That's an error</title>
+  <link rel="stylesheet" href="../static/css/game.css">
+</head>
+<body>
+  <div id="stage">
+    <div id="message" class="msg"></div>
+    <!-- Styled as a 404 error page but keeps same IDs/structure for JS to work -->
+    <div id="notGame" aria-hidden="false" class="error-page">
+      <div class="error-card" role="alert">
+        <div class="error-code">404</div>
+        <h1>That's an error.</h1>
+        <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+
+        <div class="error-actions">
+          <button class="fakeBtn" id="fakeButton">Go back</button>
+          <button class="fakeBtn" id="revealBtn" style="margin-left:8px">Show details</button>
+        </div>
+
+        <p class="small">If you pressed that last button repeatedly — nothing to worry about. It's just a little joke.</p>
+      </div>
+    </div>
+
+
+
+    <div id="world">
+      <div class="revealed-layer">
+        <div class="scribles">
+          <img src="../static/images/wall/bat.png" alt="bat">
+          <img src="../static/images/wall/claw.png" alt="claws">
+          <img src="../static/images/wall/h.png" alt="h">
+          <img src="../static/images/wall/spo.png" alt="spot">
+          <img src="../static/images/wall/va.png" alt="bloo">
+          <img src="../static/images/wall/B.png" alt="B">
+          <img src="../static/images/wall/pe.png" alt="A">
+          <img src="../static/images/wall/T.png" alt="T">
+          <img src="../static/images/wall/cat.png" alt="cat">
+          <img src="../static/images/wall/omega.png" alt="omega">
+          <img src="../static/images/wall/smudge.png" alt="smudge">
+          <img src="../static/images/wall/imo.png" alt="face">
+          <img src="../static/images/wall/k.png" alt="K">
+          <img src="../static/images/wall/spider.png" alt="spider">
+
+        </div>  
+      </div>
+
+      <div class="sun"></div>
+      <div class="darkness"></div>
+    </div>
+
+  <div id="world1" aria-hidden="true" role="application" style="display:none;">
+    <div class="scene" id="scene">
+      <div class="timer"></div>
+      <div class="cube" id="cube">
+        <div class="face front" data-face="front">
+          <button id="teleportBtn" class="teleport-btn">
+            <img src="../static/images/world1/button.png" alt="" />
+          </button>
+        </div>
+        <div class="face back" data-face="back"></div>
+        <div class="face left" data-face="left"></div>
+        <div class="face right" data-face="right"></div>
+        <div class="face top" data-face="top"></div>
+        <div class="face bottom" data-face="bottom"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stage 3: world2 -->
+  <div id="world2" aria-hidden="true" role="application" style="display:none;">
+    <div>
+      <h1>2d20 Dice Roller</h1>
+      <p class="lead">Roll a 40, 1/400 chance.  good luck</p>
+    </div>
+    <div class="controls">
+      <button id="rollBtn" class ="btn">Roll 2d20</button>
+      <button id="clearBtn" class ="btn">Clear History</button>
+    </div>
+
+    <section class="roller" aria-live="polite">
+      <div class="die" id="die1" tabindex="0" role="button" aria-label="Die 1">
+        <div class="label">d20</div>
+        <div class="value" id="val1">—</div>
+      </div>
+      <div class="die" id="die2" tabindex="0" role="button" aria-label="Die 2">
+        <div class="label">d20</div>
+        <div class="value" id="val2">—</div>
+      </div>
+    </section>
+
+    <div class="result">
+      <div>
+        <div class="muted">Total</div>
+        <div class="total" id="total">—</div>
+      </div>
+      <div style="text-align:right">
+        <div class="muted">Last roll</div>
+        <div id="last">—</div>
+      </div>
+    </div>
+
+
+    <div class="history" id="history"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='game.js') }}" defer></script>
+</body>
+</html>
+
+
+
+
+
+

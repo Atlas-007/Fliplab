@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Black Hole Photons — Web</title>
+  <link rel="stylesheet" href="../static/css/blackhole.css"">
+</head>
+<body>
+  <div id="topbar">
+    <div id="title">Black Hole particals (click to add)</div>
+    <div id="controls">
+      <label>Mass (kg)
+        <input id="mass" type="number" step="1e28" value="5e30" />
+      </label>
+      <label>Scale (m/px)
+        <input id="scale" type="number" step="1e3" value="50000" />
+      </label>
+      <label>Time scale
+        <input id="timeScale" type="number" step="0.1" value="1.0" />
+      </label>
+      <label>Substeps
+        <input id="substeps" type="number" min="1" max="32" value="8" />
+      </label>
+      <button id="pauseBtn">Pause</button>
+      <button id="stepBtn">Step</button>
+      <button id="clearBtn">Clear</button>
+    </div>
+  </div>
+
+  <canvas id="simCanvas"></canvas>
+
+  <div id="info">
+    <div id="status">photons: 0</div>
+    <div id="instructions">
+      LEFT-click: add orbiting particals (Shift = reverse) · RIGHT-click: add stationary partical ·
+      R:reset mass/scale · Arrow keys change scale/mass
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='blackhole.js') }}"></script>
+</body>
+</html>
+
+

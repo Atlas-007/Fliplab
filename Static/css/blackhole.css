@@ -1,0 +1,56 @@
+:root {
+  --panel-bg: rgba(255,255,255,0.92);
+  --accent: #222;
+  --muted: #555;
+}
+
+html,body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f6f7fb;
+}
+
+#topbar {
+  position: fixed;
+  left: 12px;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--panel-bg);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  z-index: 10;
+}
+
+#title { font-weight: 600; color: var(--accent); margin-right: 12px; }
+
+#controls { display: flex; gap: 10px; align-items:center; flex-wrap:wrap; }
+
+#controls label { font-size: 13px; color: var(--muted); display:flex; flex-direction:column; }
+#controls input[type=number] { width: 140px; padding: 6px 8px; border-radius:6px; border:1px solid #ddd; }
+#controls button { padding: 6px 10px; border-radius:8px; border:none; cursor:pointer; background:#222; color:#fff; }
+
+#simCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#info {
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  background: var(--panel-bg);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  color: var(--muted);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  z-index: 10;
+}
