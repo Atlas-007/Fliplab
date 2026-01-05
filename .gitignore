@@ -22,3 +22,31 @@ dist/
 .DS_Store
 *.egg
 staticfiles/
+wsgi.py
+# Environment and secrets
+.env
+*.env
+instance/
+secrets.json
+credentials.json
+*.key
+*.pem
+*.crt
+*.p12
+.secrets
+
+# Config files that may hold secrets
+config.py
+settings.py
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Build / packaging
+pip-wheel-metadata/
+*.egg-info/
+
+# Logs
+*.log
