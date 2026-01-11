@@ -1,4 +1,3 @@
-
 (() => {
   const SPAM_THRESHOLD = 6;      
   const WINDOW_MS = 1800;        
@@ -14,7 +13,8 @@
   const hs2 = document.getElementById('hs2');
   const world1 = document.getElementById('world1');
   const world2 = document.getElementById('world2');
-
+  const world3 = document.getElementById('world3');
+  const end = document.getElementById('end');
   
   let clickTimes = [];
 
@@ -90,7 +90,7 @@
   }
 
   // ---------- Reveal stages ----------
-  const stages = [notGame, world, world1, world2];
+  const stages = [notGame, world, world1, world2, world3, end];
   let currentStageIndex = 0;
 
   function revealNextStage() {
@@ -205,12 +205,11 @@
     const randomFace = faces[Math.floor(Math.random() * faces.length)];
 
     // Get button size in % relative to face
-    const buttonWidthPercent = (button.offsetWidth / randomFace.offsetWidth) * 100;
-    const buttonHeightPercent = (button.offsetHeight / randomFace.offsetHeight) * 100;
+
 
     // Pick top/left so the button stays fully inside the face
-    const top = Math.random() * (100 - buttonHeightPercent);
-    const left = Math.random() * (100 - buttonWidthPercent);
+    const top = Math.random() * (95);
+    const left = Math.random() * (95);
 
     button.style.position = 'absolute';
     button.style.top = top + "%";
@@ -346,19 +345,42 @@ rollAll();
 }
 });
 
+// world 3
+const runcode = document.getElementById('runcode');
+const codeInput = document.getElementById('codeInput');
+const outputEl = document.getElementById('output');
 
+codeInput.addEventListener('keydown', function(event) {
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'v') {
+        event.preventDefault();
+        alert("Not the easy way! 🚫");
+    }
+});
+
+codeInput.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+});
+
+codeInput.addEventListener('paste', function(event) {
+    event.preventDefault();
+    alert('Nice try!');
+});
+
+
+runcode.addEventListener('click', () => {
+  const code = codeInput.value;
+    if (code.trim() === "++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.") {
+ 
+      revealNextStage();
+    }})
 
 
 // dev skip
 
-document.addEventListener('keydown', (ev) => {
-  if (ev.key === "s"){
-    revealNextStage();}
-});
+//document.addEventListener('keydown', (ev) => {
+//  if (ev.key === "s"){
+//    revealNextStage();}
+// });
   
 
-
 })();
-
-
-

@@ -104,8 +104,32 @@
     </div>
 
 
-    <div class="history" id="history"></div>
   </div>
+  <!-- Stage 4: world3 -->
+  <div id="world3" aria-hidden="true" role="application" style="display:none;">
+      <p>Write “Hello World!” in Brainfuck</p>
+
+      <textarea
+        id="codeInput"
+        placeholder="Enter your Brainfuck code here..."
+        rows="4"
+        cols="60"
+      ></textarea>
+
+      <br>
+
+      <button id="runcode" class="btn">Run Code</button>
+
+      <p>Output:</p>
+      <pre id="output"></pre>
+  </div>
+
+  <div id="end" aria-hidden="true" style="display:none;">
+    <h1>You win 🎉</h1>
+  </div>
+
+    <div class="history" id="history"></div>
+
 
   <script src="{{ url_for('static', filename='game.js') }}" defer></script>
 </body>
