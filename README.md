@@ -6,7 +6,7 @@ A personal project hub built with Flask to showcase some of my projects.
 
 - a simple 4x4 screan devide (largly made as a practice)  
 - a newtonian particle black hole simulation ( I may make an acurate general relativity simulation in the future)
-- a web "game" (still expanfing apon it)
+- a web "game" (still expanding apon it)
 
 ## Tech Stack
 - **Backend:** Flask (Python)  
