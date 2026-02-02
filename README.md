@@ -1,9 +1,6 @@
 ## Project Hub
 A personal project hub built with Flask to showcase some of my projects.
 
-##About
-This web application is a personal showcase of my coding projects.  
-It demonstrates my skills in Python, Flask, and web development.
 
 ## projects (for now)
 
